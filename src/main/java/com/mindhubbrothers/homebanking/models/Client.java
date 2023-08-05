@@ -16,7 +16,7 @@ public class Client {
     @GenericGenerator(name = "native", strategy = "native")
     private Long id;
 
-    private String name;
+    private String firstName;
 
     private String lastName;
     private String email;
@@ -24,8 +24,8 @@ public class Client {
 
     public Client(){}
 
-    public Client(String name, String lastName, String email){
-        this.name = name;
+    public Client(String firstName, String lastName, String email){
+        this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
     }
@@ -37,13 +37,13 @@ public class Client {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        if (!name.isBlank()) {
-            this.name = name;
+    public void setFirstName(String firstName) {
+        if (!firstName.isBlank()) {
+            this.firstName = firstName;
         }
     }
 
@@ -67,7 +67,7 @@ public class Client {
     @Override
     public String toString() {
         return "Client{" +
-                "name='" + name + '\'' +
+                "name='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 '}';
