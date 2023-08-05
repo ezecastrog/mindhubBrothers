@@ -21,11 +21,7 @@ public class HomebankingApplication {
 			Client client = new Client("Ezequiel","Castro Gramajo","eze@gmail.com");
 			Client client1 = new Client("Lionel","Messi","leomessi@mundial.com");
 
-			// user.setName("Guillermo");
-
-			// ArrayList<Integer> numeros = new ArrayList<>();
 			System.out.println(client);
-			// int[] numeros2 = new int[5];
 			clientRepository.save(client);
 			clientRepository.save(client1);
 			System.out.println(client1);
