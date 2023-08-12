@@ -2,8 +2,11 @@ package com.mindhubbrothers.homebanking;
 
 import com.mindhubbrothers.homebanking.models.Account;
 import com.mindhubbrothers.homebanking.models.Client;
+import com.mindhubbrothers.homebanking.models.Transaction;
+import com.mindhubbrothers.homebanking.models.TransactionType;
 import com.mindhubbrothers.homebanking.repositories.AccountRepository;
 import com.mindhubbrothers.homebanking.repositories.ClientRepository;
+import com.mindhubbrothers.homebanking.repositories.TransactionRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -59,6 +62,19 @@ public class HomebankingApplication {
             accountRepository.save((account1));
 			accountRepository.save((account2));
 			accountRepository.save((account3));
+
+			//Crear transaccion
+			Transaction transaction1 = new Transaction();
+			transaction1.setDescription("Envio monto para pago servicios");
+			transaction1.setLocalDate(LocalDate.now());
+			transaction1.setType(TransactionType.DEBIT);
+			transaction1.setAmount(1000);
+
+			//Agrego la transaccion a la cuenta
+			account1.addTransaction(transaction1);
+
+			//Guardo la transaccion en la base
+
 
 		};
 	}
